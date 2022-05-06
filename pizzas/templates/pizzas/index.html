@@ -1,0 +1,13 @@
+{% extends "pizzas/base.html" %} 
+{% block header %} 
+    <div class="jumbotron">
+        <h1>Aidan's Pizzeria</h1>
+    </div>
+{% endblock header %} 
+
+{% block content %}
+    <h2>
+        <a href="{% url 'pizzas:menu' %}">View Menu</a> for each pizza's toppings.
+    </h2>
+
+{% endblock content %} 

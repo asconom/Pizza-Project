@@ -1,0 +1,26 @@
+{% extends "pizzas/base.html" %} 
+
+{% block header %} 
+<h1> {{ pizza }} Pizza </h1>
+{% endblock header %}
+
+
+{% block content %} 
+
+<p>
+{% load static %} <img src="{% static "{{picture}}" %}" alt="picture" />
+</p>
+<h3>
+    Toppings:
+</h3>
+<ul>
+    {% for t in toppings %} 
+    <li>
+        <h3> <small>{{ t.topping_name }} 
+            </small>
+        </h3>
+    </li>
+    {% endfor %} 
+</ul>
+
+{% endblock content %} 
