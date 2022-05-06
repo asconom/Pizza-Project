@@ -12,6 +12,7 @@ urlpatterns = [
     path('',views.index, name='index'),
     path('menu',views.menu, name='menu'),
     path('menu/<int:pizza_id>/',views.pizza, name='pizza'),
+    path('new_comment/<int:pizza_id>/', views.new_comment, name='new_comment'),
     path('picture', views.pizza, name = 'picture'),
 ]
 

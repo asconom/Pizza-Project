@@ -7,11 +7,9 @@
 
 {% block content %} 
 
-{% for p in picture %}
 <div>
-<img src="{{ p.picture.url }}" />
+<img src="{{ pizza.picture.url }}" />
 </div>
-{% endfor %}
 
 <h3>
     Toppings:
@@ -25,5 +23,16 @@
     </li>
     {% endfor %} 
 </ul>
+
+<h3>
+    Comments: <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a comment</a>
+</h3>
+    {% for c in comment %} 
+    <li>
+        <h3> <small>{{ c }} 
+            </small>
+        <h3>
+    </li>
+    {% endfor %} 
 
 {% endblock content %} 
