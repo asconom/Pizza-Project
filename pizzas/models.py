@@ -7,7 +7,7 @@ from django.db import models
 
 class Pizza(models.Model):
     pizza_name = models.CharField(max_length=200)
-    picture = models.ImageField(null=True)
+    picture = models.ImageField(upload_to='images/')
 
 
     def __str__(self):
@@ -16,7 +16,7 @@ class Pizza(models.Model):
 
 class Toppings(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-    topping_name = models.TextField()
+    topping_name = models.TextField(null=True)
     
 
     class Meta:

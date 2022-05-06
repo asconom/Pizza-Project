@@ -127,3 +127,6 @@ STATIC_URL = '/static/'
 BOOTSTRAP3 ={
     'include_jquery': True,
 }
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

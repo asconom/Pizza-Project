@@ -1,15 +1,20 @@
 from django.urls import path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from . import views
 
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 app_name = 'pizzas'
 
 urlpatterns = [
     path('',views.index, name='index'),
     path('menu',views.menu, name='menu'),
-    path('menu/<int:pizza_id>/',views.pizza, name='pizza')
+    path('menu/<int:pizza_id>/',views.pizza, name='pizza'),
+    path('picture', views.pizza, name = 'picture'),
 ]
 
-urlpatterns += staticfiles_urlpatterns()
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)

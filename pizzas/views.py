@@ -14,7 +14,7 @@ def menu(request):
 
 def pizza(request, pizza_id):
     pizza = Pizza.objects.get(id=pizza_id)
-    picture = Pizza.picture
+    picture = Pizza.objects.all()
     toppings = pizza.toppings_set.all()
     
     context = {'pizza':pizza, 'picture':picture, 'toppings':toppings} 

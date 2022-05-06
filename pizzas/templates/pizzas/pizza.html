@@ -7,9 +7,12 @@
 
 {% block content %} 
 
-<p>
-{% load static %} <img src="{% static "{{picture}}" %}" alt="picture" />
-</p>
+{% for p in picture %}
+<div>
+<img src="{{ p.picture.url }}" />
+</div>
+{% endfor %}
+
 <h3>
     Toppings:
 </h3>

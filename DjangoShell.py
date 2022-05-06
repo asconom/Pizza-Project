@@ -1,5 +1,6 @@
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Pizzeria.settings")
+from PIL import Image
 
 import django
 django.setup()
@@ -22,6 +23,8 @@ for t in toppings:
 
 for p in pizzas:
     print(p)
+    im = Image.open(p.picture)
+    im.show()
     for t in toppings:
         print(t.topping_name)
-        print(t.image)
+        
