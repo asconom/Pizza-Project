@@ -5,7 +5,7 @@ from PIL import Image
 import django
 django.setup()
 
-from pizzas.models import Pizza
+from pizzas.models import Pizza, Comment
 
 pizzas = Pizza.objects.all()
 

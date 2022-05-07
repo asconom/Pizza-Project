@@ -27,7 +27,7 @@ class Toppings(models.Model):
 
 class Comment(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-    comment = models.CharField(null=True, max_length=200)
+    comment = models.CharField(max_length=200)
 
     def __str__(self):
         return self.comment

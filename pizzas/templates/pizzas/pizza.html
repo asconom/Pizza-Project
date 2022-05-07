@@ -8,7 +8,7 @@
 {% block content %} 
 
 <div>
-<img src="{{ pizza.picture.url }}" />
+<img src="{{ pizza.picture.url }}" width=400 height=auto/>
 </div>
 
 <h3>
@@ -25,11 +25,13 @@
 </ul>
 
 <h3>
-    Comments: <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a comment</a>
+    Comments: 
+</h3>
+<h3>
+    <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a comment</a>
 </h3>
     {% for c in comment %} 
-    <li>
-        <h3> <small>{{ c }} 
+    <li><h3> <small>{{ c }} 
             </small>
         <h3>
     </li>
